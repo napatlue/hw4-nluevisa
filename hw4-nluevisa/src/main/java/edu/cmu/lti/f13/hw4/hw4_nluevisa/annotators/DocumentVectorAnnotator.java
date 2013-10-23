@@ -34,7 +34,7 @@ public class DocumentVectorAnnotator extends JCasAnnotator_ImplBase {
 		String docText = doc.getText();
 		
 		//TO DO: construct a vector of tokens and update the tokenList in CAS
-		
+		//test
 
 	}
 
