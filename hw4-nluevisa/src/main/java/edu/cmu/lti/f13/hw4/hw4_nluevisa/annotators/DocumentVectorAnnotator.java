@@ -29,10 +29,18 @@ import edu.cmu.lti.f13.hw4.hw4_nluevisa.utils.Utils;
 import edu.cmu.lti.f13.hw4.hw4_nluevisa.utils.*;
 public class DocumentVectorAnnotator extends JCasAnnotator_ImplBase {
 
+  /**
+   * A Set containing stop words
+   * 
+   */
   Set<String> stopWordSet;
 	@Override
 	public void process(JCas jcas) throws AnalysisEngineProcessException {
 	  
+	  /**
+	   * Read stop word string from files and add them to stopWordSet 
+	   * 
+	   */
 	  stopWordSet = new TreeSet<String>();
 	  BufferedReader br = null;
 	  try {
@@ -58,6 +66,7 @@ public class DocumentVectorAnnotator extends JCasAnnotator_ImplBase {
           e.printStackTrace();
         }
     }
+	  /*****************************************/
 	  
 		FSIterator<Annotation> iter = jcas.getAnnotationIndex().iterator();
 		if (iter.isValid()) {
@@ -74,12 +83,9 @@ public class DocumentVectorAnnotator extends JCasAnnotator_ImplBase {
 	 */
 
 	private void createTermFreqVector(JCas jcas, Document doc) {
-
-	  
 	  
 		String docText = doc.getText();
 		//TO DO: construct a vector of tokens and update the tokenList in CAS
-		//System.out.println(docText);
 		Stemmer s = new Stemmer();
 		
 		ArrayList<Token> arrTok = new ArrayList<Token>();

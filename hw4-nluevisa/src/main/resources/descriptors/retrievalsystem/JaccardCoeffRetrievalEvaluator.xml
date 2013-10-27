@@ -5,10 +5,10 @@
   <primitive>true</primitive>
   <annotatorImplementationName>edu.cmu.lti.f13.hw4.hw4_nluevisa.casconsumers.JaccardCoefRetrievalEvaluator</annotatorImplementationName>
   <analysisEngineMetaData>
-    <name>RetrievalEvaluator</name>
-    <description/>
+    <name>JaccardCoefRetrievalEvaluator</name>
+    <description>Analysis Engine for QA system using Jaccard Coefficient</description>
     <version>1.0</version>
-    <vendor/>
+    <vendor>nluevisa</vendor>
      <configurationParameters/>
     <configurationParameterSettings/>
     <typeSystemDescription>

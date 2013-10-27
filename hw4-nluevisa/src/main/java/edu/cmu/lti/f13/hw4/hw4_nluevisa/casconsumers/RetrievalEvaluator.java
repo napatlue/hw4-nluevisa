@@ -30,23 +30,26 @@ import edu.cmu.lti.f13.hw4.hw4_nluevisa.utils.Utils;
 
 public class RetrievalEvaluator extends CasConsumer_ImplBase {
 
-	/** query id number **/
-	public ArrayList<Integer> qIdList;
+  /** query id number **/
+  public ArrayList<Integer> qIdList;
 
-	/** query and text relevant values **/
-	public ArrayList<Integer> relList;
+  /** query and text relevant values **/
+  public ArrayList<Integer> relList;
 
+  /** map from queryId to Document **/
+  private Map<Integer,Document> queryMap;
+ 
+  /** map from queryId to Document Term Vector **/
+  private ArrayList<Map<String,Integer>> docTermMap;
 
-	private Map<Integer,Document> queryMap;
-	
-	private ArrayList<Map<String,Integer>> docTermMap;
-
-	private ArrayList<String> oriTextList;
-	
-	private Map<Integer, ArrayList<DocScore>> queryResultMap;
-	
-	private ArrayList<Float> rrScoreList;
-	
+  /** query and original sentence **/
+  private ArrayList<String> oriTextList;
+  
+  /** map from queryId to list of documents and their score **/
+  private Map<Integer, ArrayList<DocScore>> queryResultMap;
+  
+  /** list of reciprocal rank score **/
+  private ArrayList<Float> rrScoreList;
 	
 	public void initialize() throws ResourceInitializationException {
 

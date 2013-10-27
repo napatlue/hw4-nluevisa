@@ -25,9 +25,9 @@
   </delegateAnalysisEngineSpecifiers>
   <analysisEngineMetaData>
     <name>DocumentRetrieval</name>
-    <description/>
-    <version/>
-    <vendor/>
+    <description>Aggregate analysis engine to compute MRR metric and compare result of each retrieval method using different similarity function</description>
+    <version>1.0</version>
+    <vendor>nluevisa</vendor>
     <configurationParameters/>
     <configurationParameterSettings/>
     <flowConstraints>

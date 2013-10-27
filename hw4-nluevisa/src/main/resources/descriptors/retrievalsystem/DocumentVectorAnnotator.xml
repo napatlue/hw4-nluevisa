@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <analysisEngineDescription xmlns="http://uima.apache.org/resourceSpecifier">
   <frameworkImplementation>org.apache.uima.java</frameworkImplementation>
   <primitive>true</primitive>
   <annotatorImplementationName>edu.cmu.lti.f13.hw4.hw4_nluevisa.annotators.DocumentVectorAnnotator</annotatorImplementationName>  
   <analysisEngineMetaData>
     <name>DocumentVector</name>
-    <description/>
+    <description>Analysis Engine to create Document Annotation</description>
     <version>1.0</version>
-    <vendor/>
+    <vendor>nluevisa</vendor>
     <configurationParameters/>
     <configurationParameterSettings/>
     <typeSystemDescription>

@@ -5,7 +5,9 @@ package edu.cmu.lti.f13.hw4.hw4_nluevisa.utils;
 import java.util.Map;
 
 import org.apache.commons.lang.builder.ToStringBuilder;
-
+/**
+ * Class for storing the similarity result between query and document
+ */
 public class DocScore implements Comparable<DocScore>{
 
   private int relevance;

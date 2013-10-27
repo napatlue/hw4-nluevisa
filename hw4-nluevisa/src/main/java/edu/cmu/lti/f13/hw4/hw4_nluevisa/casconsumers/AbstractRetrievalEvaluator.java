@@ -27,7 +27,10 @@ import edu.cmu.lti.f13.hw4.hw4_nluevisa.typesystems.Token;
 import edu.cmu.lti.f13.hw4.hw4_nluevisa.utils.DocScore;
 import edu.cmu.lti.f13.hw4.hw4_nluevisa.utils.Utils;
 
-
+/**
+ * Abstract class for computing the similarity and performance metric of the collection 
+ * This class has one abstract method computeSimilarity.
+ */
 public abstract class AbstractRetrievalEvaluator extends CasConsumer_ImplBase {
 
   /** query id number **/
@@ -36,15 +39,19 @@ public abstract class AbstractRetrievalEvaluator extends CasConsumer_ImplBase {
   /** query and text relevant values **/
   public ArrayList<Integer> relList;
 
-
+  /** map from queryId to Document **/
   private Map<Integer,Document> queryMap;
-  
+ 
+  /** map from queryId to Document Term Vector **/
   private ArrayList<Map<String,Integer>> docTermMap;
 
+  /** query and original sentence **/
   private ArrayList<String> oriTextList;
   
+  /** map from queryId to list of documents and their score **/
   private Map<Integer, ArrayList<DocScore>> queryResultMap;
   
+  /** list of reciprocal rank score **/
   private ArrayList<Float> rrScoreList;
   
   
@@ -87,11 +94,9 @@ public abstract class AbstractRetrievalEvaluator extends CasConsumer_ImplBase {
     if (it.hasNext()) {
       Document doc = (Document) it.next();
 
-      //System.out.println(doc.getCoveredText());
-      //Make sure that your previous annotators have populated this in CAS
       FSList fsTokenList = doc.getTokenList();
       ArrayList<Token> tokenList = Utils.fromFSListToCollection(fsTokenList, Token.class);
-      //System.out.println(tokenList);
+
       
       int qId = doc.getQueryID();
       int rel = doc.getRelevanceValue();
@@ -100,7 +105,8 @@ public abstract class AbstractRetrievalEvaluator extends CasConsumer_ImplBase {
       oriTextList.add(doc.getText());
       
       Map<String, Integer> termMap = new HashMap<String, Integer>();
-      //Do something useful here
+      
+      // Create Document Term Vector 
       for(int i=0;i<tokenList.size();i++)
       {
         Token word = tokenList.get(i);
@@ -108,7 +114,6 @@ public abstract class AbstractRetrievalEvaluator extends CasConsumer_ImplBase {
         term = term.toLowerCase();
         int freq = word.getFrequency();
         termMap.put(term, freq);
-        //docTokList.get(i).add(new Pair<String, Integer>(term, freq));
       }
       //System.out.println(termMap);
       docTermMap.add(termMap);
@@ -120,8 +125,7 @@ public abstract class AbstractRetrievalEvaluator extends CasConsumer_ImplBase {
   }
 
   /**
-   * TODO 1. Compute Cosine Similarity and rank the retrieved sentences 2.
-   * Compute the MRR metric
+   * Compute Similarity and rank the retrieved sentences and compute the MRR metric
    */
   @Override
   public void collectionProcessComplete(ProcessTrace arg0)
@@ -129,7 +133,7 @@ public abstract class AbstractRetrievalEvaluator extends CasConsumer_ImplBase {
 
     super.collectionProcessComplete(arg0);
 
-    // TODO :: compute the cosine similarity measure
+    // Compute the similarity measure
     Map<String,Integer> queryVector = new HashMap<String, Integer>();
     Map<String,Integer> docVector;
     
@@ -159,7 +163,7 @@ public abstract class AbstractRetrievalEvaluator extends CasConsumer_ImplBase {
     
     System.out.println("Evaluator Class: "+this.getClass().toString());
     
-    // TODO :: compute the rank of retrieved sentences
+    // Compute the rank of retrieved sentences
     Iterator it = queryResultMap.entrySet().iterator();
     while (it.hasNext()) {
         Map.Entry pairs = (Map.Entry)it.next();
@@ -181,14 +185,14 @@ public abstract class AbstractRetrievalEvaluator extends CasConsumer_ImplBase {
     }
     
     
-    // TODO :: compute the metric:: mean reciprocal rank
+    // Compute the metric:: mean reciprocal rank
     double metric_mrr = compute_mrr();
     System.out.println(" (MRR) Mean Reciprocal Rank ::" + metric_mrr);
     System.out.println("============================================");
   }
 
   /**
-   * 
+   * Abstract method to compute similarity between document vector
    * @return similarity value between two vector
    */
   protected abstract double computeSimilarity(Map<String, Integer> queryVector, Map<String, Integer> docVector);
@@ -200,7 +204,7 @@ public abstract class AbstractRetrievalEvaluator extends CasConsumer_ImplBase {
   protected double computeVectorSize(Map<String, Integer> docVector) {
     double v=0.0;
 
-    // TODO :: compute cosine similarity between two sentences
+    // compute vector size
     Iterator it = docVector.entrySet().iterator();
     while (it.hasNext()) {
         Map.Entry pairs = (Map.Entry)it.next();
@@ -220,7 +224,7 @@ public abstract class AbstractRetrievalEvaluator extends CasConsumer_ImplBase {
   private double compute_mrr() {
     double metric_mrr=0.0;
 
-    // TODO :: compute Mean Reciprocal Rank (MRR) of the text collection
+    // Compute Mean Reciprocal Rank (MRR) of the text collection
     for(int i=0; i< rrScoreList.size(); i++)
     {
       metric_mrr += rrScoreList.get(i);

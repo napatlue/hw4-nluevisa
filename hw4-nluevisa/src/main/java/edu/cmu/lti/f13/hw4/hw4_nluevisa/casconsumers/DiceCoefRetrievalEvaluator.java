@@ -2,10 +2,15 @@ package edu.cmu.lti.f13.hw4.hw4_nluevisa.casconsumers;
 
 import java.util.Iterator;
 import java.util.Map;
-
+/**
+ * Class for computing the Dice Coefficient and performance metric of the collection 
+ */
 public class DiceCoefRetrievalEvaluator extends AbstractRetrievalEvaluator{
 
   @Override
+  /**
+   * @return Dice Coefficient
+   */
   protected double computeSimilarity(Map<String, Integer> queryVector,
           Map<String, Integer> docVector) {
     // TODO :: compute cosine similarity between two sentences
