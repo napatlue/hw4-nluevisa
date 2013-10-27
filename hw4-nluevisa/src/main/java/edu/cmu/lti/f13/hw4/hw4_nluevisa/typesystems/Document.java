@@ -12,8 +12,8 @@ import org.apache.uima.jcas.tcas.Annotation;
 
 
 /** 
- * Updated by JCasGen Fri Oct 11 01:58:03 EDT 2013
- * XML source: /home/diwang/ur-workspace/hw4-nluevisa/src/main/resources/descriptors/typesystems/VectorSpaceTypes.xml
+ * Updated by JCasGen Sun Oct 27 00:04:52 EDT 2013
+ * XML source: /Users/napatluevisadpaibul/git/hw4-nluevisa/hw4-nluevisa/src/main/resources/descriptors/retrievalsystem/VectorSpaceRetrieval.xml
  * @generated */
 public class Document extends Annotation {
   /** @generated
