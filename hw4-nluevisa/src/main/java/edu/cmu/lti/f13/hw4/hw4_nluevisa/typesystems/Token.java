@@ -10,9 +10,9 @@ import org.apache.uima.jcas.cas.TOP_Type;
 import org.apache.uima.jcas.tcas.Annotation;
 
 
-/** 
- * Updated by JCasGen Sun Oct 27 00:04:52 EDT 2013
- * XML source: /Users/napatluevisadpaibul/git/hw4-nluevisa/hw4-nluevisa/src/main/resources/descriptors/retrievalsystem/VectorSpaceRetrieval.xml
+/** Token type annotation
+ * Updated by JCasGen Mon Oct 28 16:01:20 EDT 2013
+ * XML source: /Users/napatluevisadpaibul/git/hw4-nluevisa/hw4-nluevisa/src/main/resources/descriptors/typesystems/VectorSpaceTypes.xml
  * @generated */
 public class Token extends Annotation {
   /** @generated
@@ -65,14 +65,14 @@ public class Token extends Annotation {
   //*--------------*
   //* Feature: text
 
-  /** getter for text - gets 
+  /** getter for text - gets Text of the token
    * @generated */
   public String getText() {
     if (Token_Type.featOkTst && ((Token_Type)jcasType).casFeat_text == null)
       jcasType.jcas.throwFeatMissing("text", "edu.cmu.lti.f13.hw4.hw4_nluevisa.typesystems.Token");
     return jcasType.ll_cas.ll_getStringValue(addr, ((Token_Type)jcasType).casFeatCode_text);}
     
-  /** setter for text - sets  
+  /** setter for text - sets Text of the token 
    * @generated */
   public void setText(String v) {
     if (Token_Type.featOkTst && ((Token_Type)jcasType).casFeat_text == null)
@@ -83,14 +83,14 @@ public class Token extends Annotation {
   //*--------------*
   //* Feature: frequency
 
-  /** getter for frequency - gets 
+  /** getter for frequency - gets Frequency of this token appear in the document
    * @generated */
   public int getFrequency() {
     if (Token_Type.featOkTst && ((Token_Type)jcasType).casFeat_frequency == null)
       jcasType.jcas.throwFeatMissing("frequency", "edu.cmu.lti.f13.hw4.hw4_nluevisa.typesystems.Token");
     return jcasType.ll_cas.ll_getIntValue(addr, ((Token_Type)jcasType).casFeatCode_frequency);}
     
-  /** setter for frequency - sets  
+  /** setter for frequency - sets Frequency of this token appear in the document 
    * @generated */
   public void setFrequency(int v) {
     if (Token_Type.featOkTst && ((Token_Type)jcasType).casFeat_frequency == null)

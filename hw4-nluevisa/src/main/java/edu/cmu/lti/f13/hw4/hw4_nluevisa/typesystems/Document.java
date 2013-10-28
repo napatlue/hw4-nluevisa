@@ -11,9 +11,9 @@ import org.apache.uima.jcas.cas.FSList;
 import org.apache.uima.jcas.tcas.Annotation;
 
 
-/** 
- * Updated by JCasGen Sun Oct 27 00:04:52 EDT 2013
- * XML source: /Users/napatluevisadpaibul/git/hw4-nluevisa/hw4-nluevisa/src/main/resources/descriptors/retrievalsystem/VectorSpaceRetrieval.xml
+/** Document Annotation
+ * Updated by JCasGen Mon Oct 28 16:01:20 EDT 2013
+ * XML source: /Users/napatluevisadpaibul/git/hw4-nluevisa/hw4-nluevisa/src/main/resources/descriptors/typesystems/VectorSpaceTypes.xml
  * @generated */
 public class Document extends Annotation {
   /** @generated
@@ -66,14 +66,20 @@ public class Document extends Annotation {
   //*--------------*
   //* Feature: relevanceValue
 
-  /** getter for relevanceValue - gets 
+  /** getter for relevanceValue - gets relevance value of the document
+0 = non relevance
+1 = relevance
+99 = query itself
    * @generated */
   public int getRelevanceValue() {
     if (Document_Type.featOkTst && ((Document_Type)jcasType).casFeat_relevanceValue == null)
       jcasType.jcas.throwFeatMissing("relevanceValue", "edu.cmu.lti.f13.hw4.hw4_nluevisa.typesystems.Document");
     return jcasType.ll_cas.ll_getIntValue(addr, ((Document_Type)jcasType).casFeatCode_relevanceValue);}
     
-  /** setter for relevanceValue - sets  
+  /** setter for relevanceValue - sets relevance value of the document
+0 = non relevance
+1 = relevance
+99 = query itself 
    * @generated */
   public void setRelevanceValue(int v) {
     if (Document_Type.featOkTst && ((Document_Type)jcasType).casFeat_relevanceValue == null)
@@ -84,14 +90,14 @@ public class Document extends Annotation {
   //*--------------*
   //* Feature: queryID
 
-  /** getter for queryID - gets 
+  /** getter for queryID - gets ID of the query that related to this document
    * @generated */
   public int getQueryID() {
     if (Document_Type.featOkTst && ((Document_Type)jcasType).casFeat_queryID == null)
       jcasType.jcas.throwFeatMissing("queryID", "edu.cmu.lti.f13.hw4.hw4_nluevisa.typesystems.Document");
     return jcasType.ll_cas.ll_getIntValue(addr, ((Document_Type)jcasType).casFeatCode_queryID);}
     
-  /** setter for queryID - sets  
+  /** setter for queryID - sets ID of the query that related to this document 
    * @generated */
   public void setQueryID(int v) {
     if (Document_Type.featOkTst && ((Document_Type)jcasType).casFeat_queryID == null)
@@ -102,14 +108,14 @@ public class Document extends Annotation {
   //*--------------*
   //* Feature: text
 
-  /** getter for text - gets 
+  /** getter for text - gets Text portion of document
    * @generated */
   public String getText() {
     if (Document_Type.featOkTst && ((Document_Type)jcasType).casFeat_text == null)
       jcasType.jcas.throwFeatMissing("text", "edu.cmu.lti.f13.hw4.hw4_nluevisa.typesystems.Document");
     return jcasType.ll_cas.ll_getStringValue(addr, ((Document_Type)jcasType).casFeatCode_text);}
     
-  /** setter for text - sets  
+  /** setter for text - sets Text portion of document 
    * @generated */
   public void setText(String v) {
     if (Document_Type.featOkTst && ((Document_Type)jcasType).casFeat_text == null)
@@ -120,14 +126,14 @@ public class Document extends Annotation {
   //*--------------*
   //* Feature: tokenList
 
-  /** getter for tokenList - gets 
+  /** getter for tokenList - gets List of token of this document
    * @generated */
   public FSList getTokenList() {
     if (Document_Type.featOkTst && ((Document_Type)jcasType).casFeat_tokenList == null)
       jcasType.jcas.throwFeatMissing("tokenList", "edu.cmu.lti.f13.hw4.hw4_nluevisa.typesystems.Document");
     return (FSList)(jcasType.ll_cas.ll_getFSForRef(jcasType.ll_cas.ll_getRefValue(addr, ((Document_Type)jcasType).casFeatCode_tokenList)));}
     
-  /** setter for tokenList - sets  
+  /** setter for tokenList - sets List of token of this document 
    * @generated */
   public void setTokenList(FSList v) {
     if (Document_Type.featOkTst && ((Document_Type)jcasType).casFeat_tokenList == null)

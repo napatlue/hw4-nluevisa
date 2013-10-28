@@ -27,6 +27,9 @@ import edu.cmu.lti.f13.hw4.hw4_nluevisa.typesystems.Token;
 import edu.cmu.lti.f13.hw4.hw4_nluevisa.utils.Stemmer;
 import edu.cmu.lti.f13.hw4.hw4_nluevisa.utils.Utils;
 import edu.cmu.lti.f13.hw4.hw4_nluevisa.utils.*;
+/**
+ * Class to annotate the document and create token list for Document
+ */
 public class DocumentVectorAnnotator extends JCasAnnotator_ImplBase {
 
   /**
@@ -77,9 +80,9 @@ public class DocumentVectorAnnotator extends JCasAnnotator_ImplBase {
 
 	}
 	/**
-	 * 
+	 * Create the token list for the document and add it to document itself.
 	 * @param jcas
-	 * @param doc
+	 * @param doc - Document in which we want to create term frequency
 	 */
 
 	private void createTermFreqVector(JCas jcas, Document doc) {

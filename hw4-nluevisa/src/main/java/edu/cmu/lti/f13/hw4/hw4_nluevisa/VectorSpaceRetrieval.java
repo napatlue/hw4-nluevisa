@@ -34,7 +34,11 @@ import org.apache.uima.analysis_engine.AnalysisEngine;
 import org.apache.uima.analysis_engine.AnalysisEngineDescription;
 import org.apache.uima.cas.CAS;
 import org.apache.uima.util.XMLInputSource;
-
+/**
+ * Main class for our system. It creates CAS and initialize analysis engine.
+ * @author napatluevisadpaibul
+ *
+ */
 public class VectorSpaceRetrieval {
 	
 	public static void main(String [] args) 

@@ -8,7 +8,11 @@ import org.apache.uima.jcas.JCas;
 
 import edu.cmu.lti.f13.hw4.hw4_nluevisa.typesystems.Document;
 
-
+/**
+ * Class to parse the input file.
+ * @author napatluevisadpaibul
+ *
+ */
 public class DocumentReader 
 extends JCasAnnotator_ImplBase  {
 	

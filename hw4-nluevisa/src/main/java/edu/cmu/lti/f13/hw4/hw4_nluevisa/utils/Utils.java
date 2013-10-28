@@ -14,7 +14,11 @@ import org.apache.uima.jcas.cas.StringList;
 import org.apache.uima.jcas.cas.TOP;
 import org.apache.uima.jcas.tcas.Annotation;
 import org.uimafit.util.JCasUtil;
-
+/**
+ * Utility class for the system
+ * @author napatluevisadpaibul
+ *
+ */
 public class Utils {
 	public static <T extends TOP> ArrayList<T> fromFSListToCollection(FSList list,
 			Class<T> classType) {
