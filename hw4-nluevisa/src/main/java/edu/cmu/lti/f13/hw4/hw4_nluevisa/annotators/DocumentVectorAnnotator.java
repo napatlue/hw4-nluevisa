@@ -100,12 +100,12 @@ public class DocumentVectorAnnotator extends JCasAnnotator_ImplBase {
 		  s.stem();
 		  term = s.toString();
 		  
-		  /* Experiment with removing stop words
-		  if(stopWordSet.contains(term))
-		  {
-		    continue;
-		  }
-		  */
+		  /* Experiment with removing stop words */
+//		  if(stopWordSet.contains(term))
+//		  {
+//		    continue;
+//		  }
+		  
 		  if(termFreq.containsKey(term))
 		  {
 		    int freq = termFreq.get(term) + 1;

@@ -105,4 +105,8 @@
 			</plugin>
 		</plugins>
 	</build>
+	<scm>
+		<connection>scm:git:git://github.com/napatlue/hw4-nluevisa.git</connection>
+		<developerConnection>scm:git:git@github.com:napatlue/hw4-nluevisa.git</developerConnection>
+	</scm>
 </project>
