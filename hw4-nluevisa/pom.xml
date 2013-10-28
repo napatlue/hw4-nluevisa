@@ -4,7 +4,7 @@
 	<groupId>edu.cmu.lti.11791.f13.hw4
 </groupId>
 	<artifactId>hw4-nluevisa</artifactId>
-	<version>0.0.1</version>
+	<version>0.0.2-SNAPSHOT</version>
 
 	<repositories>
 		<repository>
