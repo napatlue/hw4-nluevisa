@@ -45,8 +45,8 @@ public class DocumentVectorAnnotator extends JCasAnnotator_ImplBase {
 	   * 
 	   */
 	  stopWordSet = new TreeSet<String>();
-	  BufferedReader br = null;
-	  try {
+	  //BufferedReader br = null;
+	  /*try {
 	      br = new BufferedReader(new FileReader("src/main/resources/stopwords.txt"));
         String line = br.readLine();
         
